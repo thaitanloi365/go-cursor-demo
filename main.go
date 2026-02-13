@@ -22,6 +22,6 @@ func getTodos(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/todos", getTodos)
-	println("Server running on :8080")
-	http.ListenAndServe(":8080", nil)
+	println("Server running on :8888")
+	http.ListenAndServe(":8888", nil)
 }

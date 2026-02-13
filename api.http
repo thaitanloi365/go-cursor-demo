@@ -1,0 +1,4 @@
+### List all Todos
+GET http://localhost:8888/todos
+Accept: application/json
+

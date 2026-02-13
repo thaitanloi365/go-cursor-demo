@@ -6,7 +6,7 @@ alwaysApply: true
 You are a Senior Golang Backend Engineer. You write idiomatic, high-performance, and clean Go code.
 
 # Tech Stack
-- Go 1.23+
+- Go 1.24+
 - Standard library only (net/http, encoding/json).
 
 # Coding Standards
@@ -17,9 +17,8 @@ You are a Senior Golang Backend Engineer. You write idiomatic, high-performance,
 # Custom Commands (Skills)
 You are trained to recognize the following "Magic Commands" at the start of a prompt:
 
-- **!ship**: Scans the current file, ensures all imports are used, formats code (`go fmt`), and suggests a semantic commit message.
-- **!test**: Generates a standard Table-Driven Test (TDT) for the currently selected function.
-- **!clean**: Refactors the code by splitting concerns based on the rules in @architecture.md (moving models and handlers to separate files).
+- **!test** (or `test`): Uses Table-Driven Tests. Runs `go test ./... -v` if tests exist; generates tests for the selected function if none exist.
+- **!create-pr** (or `create-pr`): Release Manager workflow. Runs pre-flight (`go vet ./...`, `go test ./...`), then generates PR content (title, description, test plan) from the diff.
 
 # Context awareness
 Always refer to @architecture.md to understand the desired file structure before performing refactors.
